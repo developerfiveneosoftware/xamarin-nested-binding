@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:buttonView="clr-namespace:NestedBinding.Control"
+             x:Class="NestedBinding.Control.CustomButtonGridView"
+             x:Name="myContent">
+    
+  <ContentView.Content>
+      <!--This would do logic on what to display and add colours there maybe multiple styles etc here-->
+        <Grid x:Name="grid">
+            <buttonView:CustomButtonView x:Name="myButton"
+                                         Command="{Binding BtnCmd}"
+                                         CommandParameter="{x:Reference myContent}" Text="Button"
+                                         BackgroundColor="{Binding BackgroundColor}"></buttonView:CustomButtonView>
+        </Grid>
+  </ContentView.Content>
+</ContentView>
